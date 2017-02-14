@@ -22,7 +22,7 @@ namespace Collections
 
             // ************** UTILISATION D UNE METHODE GENERIQUE **********
             string[] data = { "un", "deux", "trois" };
-            afficherTableau<string>(data);  // dans notre cas la classe est aussi générique mais aurait pu ne pas l'être. Nous aurions appelé Generic.afficherTableau<string>(data);
+            afficherTableau<string>(data); 
 
 
             // ***************** LISTES ************
