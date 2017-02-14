@@ -11,7 +11,7 @@ namespace Collections
         static void Main(string[] args)
         {
             // ********* UTLISATION D UNE CLASSE GENERIQUE **************** 
-            Generic <int> genericInt = new Generic<int>();
+            Generic<int> genericInt = new Generic<int>();
             genericInt.Add(5);
             genericInt.Add(3);
             Console.WriteLine(genericInt.Get(0));
@@ -22,7 +22,7 @@ namespace Collections
 
             // ************** UTILISATION D UNE METHODE GENERIQUE **********
             string[] data = { "un", "deux", "trois" };
-            Generic<string>.afficherTableau<string>(data);  // dans notre cas la classe est aussi générique mais aurait pu ne pas l'être. Nous aurions appelé Generic.afficherTableau<string>(data);
+            afficherTableau<string>(data);  // dans notre cas la classe est aussi générique mais aurait pu ne pas l'être. Nous aurions appelé Generic.afficherTableau<string>(data);
 
 
             // ***************** LISTES ************
@@ -47,10 +47,19 @@ namespace Collections
 
             // **************** LISTE CHAINEE ************
 
-
-
-            
-               
         }
+
+            /// <summary>
+            /// Afficheur de tableau
+            /// </summary>
+            /// <typeparam name="Ti"></typeparam>
+            /// <param name="tableau"></param>
+            public static void afficherTableau<Ti>(Ti[] tableau)
+            {
+                foreach (Ti item in tableau)
+                {
+                    System.Console.WriteLine(item);
+                }
+            }
     }
 }

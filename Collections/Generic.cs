@@ -41,22 +41,6 @@
             return _data[position];
         }
 
-        /// <summary>
-        /// Afficheur de tableau
-        /// </summary>
-        /// <typeparam name="Ti"></typeparam>
-        /// <param name="tableau"></param>
-        public static void afficherTableau <Ti> (Ti [] tableau)
-        {
-            foreach (Ti item in tableau)
-            {
-                System.Console.WriteLine(item);
-            }
-        }
 
-        public static void afficher <Th>( Th [] tabl)
-        {
-
-        }
     }
 }
