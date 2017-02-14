@@ -87,15 +87,64 @@ namespace Collections
 
 
             // *************** DICTIONNAIRE *************
+            Dictionary<string, string> entreprise = new Dictionary<string, string>();
 
+            // Ajout au dictionnaire 
+            entreprise.Add("Maurice", "chef de rayon");
+            entreprise.Add("Robert", "chef de service");
+            entreprise.Add("Brigitte", "Secrétaire de direction");
+            // variante 
+            entreprise["Jean"] = "technicien";
 
+            // Pour voir toutes les entrées de notre dictionnaire
+            foreach (KeyValuePair<string, string> element in entreprise)
+            {
+                string nom = element.Key;
+                string fonction = element.Value;
+                Console.WriteLine("Nom: {0}, Fonction: {1}", nom, fonction);
+            }
 
             // **************** LISTE CHAINEE ************
+            // Une liste chainée est caractérisée par une référence au chiffre suivant et au chiffre précédent.  
+            //Chacune des extrémités est référencée par la valeur null
+            LinkedList<int> nombres = new LinkedList<int>();
+            int[] entiers = { 10, 8, 6, 4, 2 };
 
+            // pour rentrer des valeurs (méthode simpliste)
+            foreach (int nombre in entiers)
+            {
+                nombres.AddLast(nombre);
+            }
+
+            // pour lire les valeurs (méthode simpliste ) 
+            foreach (var item in nombres)
+            {
+                Console.WriteLine(item);
+            }
+
+            // pour trouver un noeud (node) 
+            LinkedListNode<int> node = nombres.Find(6);
+            //Grâce au noeud, il est possible de trouver le précédent et le suivant 
+            Console.WriteLine("node précédent : {0}", node.Previous.Value);
+            Console.WriteLine("node suivant : {0}", node.Next.Value);
+
+            // il est possible de faire partir le noeud du tout début de la liste chainée
+            node = nombres.First;
+            Console.WriteLine("deuxième valeur : {0}", node.Next.Value);
+
+            // ou depuis la fin 
+            node = nombres.Last;
+            Console.WriteLine(" avant dernière valeur : {0}", node.Previous.Value);
+
+            //Grâce au linkedlistnode, il est possible de parcourir la liste 
+            for (LinkedListNode<int> lknode = nombres.First; lknode != null; lknode = lknode.Next) // pour parcourir la liste en sens inverse nous serions partis de Last en faisant un lnode.Previous
+            {
+                Console.WriteLine(node.Value);
+            }
         }
 
             /// <summary>
-            /// Afficheur de tableau
+            /// Afficheur de tableau générique
             /// </summary>
             /// <typeparam name="Ti"></typeparam>
             /// <param name="tableau"></param>
