@@ -22,7 +22,10 @@ namespace Collections
 
             // ************** UTILISATION D UNE METHODE GENERIQUE **********
             string[] data = { "un", "deux", "trois" };
-            afficherTableau<string>(data); 
+            afficherTableau<string>(data);
+
+            // ************utilisation d'une methode à plusieurs génériques ************
+            testPlusieursGenerics<int, string>(5, "cinq");
 
 
             // ***************** LISTES ************
@@ -152,8 +155,22 @@ namespace Collections
             {
                 foreach (Ti item in tableau)
                 {
-                    System.Console.WriteLine(item);
+                    System.Console.WriteLine("{0}", item);
                 }
             }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="Ti"></typeparam>
+        /// <typeparam name="Tj"></typeparam>
+        /// <param name="item1"></param>
+        /// <param name="item2"></param>
+        public static void testPlusieursGenerics<Ti, Tj>(Ti item1, Tj item2)
+        {
+            Console.WriteLine(item1.GetType());
+            Console.WriteLine(item2.GetType());
+
+        }
     }
 }
