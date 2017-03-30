@@ -61,7 +61,7 @@ namespace Collections
 
 
             // *************** LIFO / Pile **************
-            // Le principe de la LIFO (Last In Last Out) est d'empiler des éléments et de les désempiler
+            // Le principe de la LIFO (Last In First Out) est d'empiler des éléments et de les désempiler
             //C'est le cas par exemple de modèle OSI (modèle réseau) qui "empile" les informations de la couche applicative à la couche matérielle depuis un équipement
             // pour être dépiler par l'équipement suivant de la couche matérielle à la couche applicative
             // Pour l'instant restons simple et imaginons une pile de crèpe préparée au fur et à mesure...
