@@ -93,7 +93,7 @@ namespace Collections
             Dictionary<string, string> entreprise = new Dictionary<string, string>();
 
             // Ajout au dictionnaire 
-            entreprise.Add("Maurice", "chef de rayon");
+            entreprise.Add("Hervé", "responsable machine à café");
             entreprise.Add("Robert", "chef de service");
             entreprise.Add("Brigitte", "Secrétaire de direction");
             // variante 
@@ -105,7 +105,10 @@ namespace Collections
                 string nom = element.Key;
                 string fonction = element.Value;
                 Console.WriteLine("Nom: {0}, Fonction: {1}", nom, fonction);
+                var personne = element;
+                Console.WriteLine(personne);
             }
+
 
             // **************** LISTE CHAINEE ************
             // Une liste chainée est caractérisée par une référence au chiffre suivant et au chiffre précédent.  
@@ -140,7 +143,7 @@ namespace Collections
             Console.WriteLine(" avant dernière valeur : {0}", node.Previous.Value);
 
             //Grâce au linkedlistnode, il est possible de parcourir la liste 
-            for (LinkedListNode<int> lknode = nombres.First; lknode != null; lknode = lknode.Next) // pour parcourir la liste en sens inverse nous serions partis de Last en faisant un lnode.Previous
+            for (LinkedListNode<int> lknode = nombres.Last; lknode != null; lknode = lknode.Previous) // pour parcourir la liste en sens inverse nous serions partis de Last en faisant un lnode.Previous
             {
                 Console.WriteLine(node.Value);
             }
